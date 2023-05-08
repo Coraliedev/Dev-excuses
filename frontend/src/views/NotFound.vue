@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
   <div class="h-screen w-screen bg-gray-50 flex items-center">
     <div
