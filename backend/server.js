@@ -21,10 +21,9 @@ app.use(express.json())
 app.use('/api/excuse', excusesRoutes)
 
 // server
-if (process.env.NODE_ENV !== 'test') {
-  app.listen(PORT, () => {
-    console.log(`Listening on port ${PORT}`)
-  })
-}
+const server = app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`)
+})
 
-module.exports = app
+module.exports = server
+

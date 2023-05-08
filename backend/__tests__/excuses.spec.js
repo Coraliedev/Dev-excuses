@@ -3,6 +3,7 @@ const app = require('../server')
 const mongoose = require('mongoose')
 const ExcuseModel = require('../models/excuse.model')
 
+
 beforeAll(async () => {
   // delete all excuses
   await ExcuseModel.deleteMany({})
@@ -11,6 +12,8 @@ beforeAll(async () => {
 afterAll(async () => {
   // close the connection to the database
   await mongoose.connection.close()
+  // close the server
+  app.close()
 })
 
 test('#1 GET / - Without data return 202', async () => {
@@ -78,3 +81,4 @@ test('#7 GET / return 500', async () => {
   expect(res).toBeDefined()
   expect(res.statusCode).toBe(500)
 })
+
