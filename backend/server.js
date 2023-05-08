@@ -2,6 +2,7 @@
 
 const express = require('express')
 require('dotenv').config()
+require('./config/database')
 
 const PORT = process.env.PORT
 
