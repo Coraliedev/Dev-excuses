@@ -60,3 +60,13 @@ test('#5 POST / - With existing message return 409', async () => {
   expect(res.statusCode).toBe(409)
   expect(res.body.message).toBe('this message already exists')
 })
+
+test('#6 GET / - With data return 200', async () => {
+  const res = await request(app).get('/api/excuse')
+  expect(res).toBeDefined()
+  expect(res.statusCode).toBe(200)
+  expect(res.body.length).toBe(1)
+  expect(res.body[0].http_code).toBe(500)
+  expect(res.body[0].tag).toBe('test')
+  expect(res.body[0].message).toBe('test')
+})
