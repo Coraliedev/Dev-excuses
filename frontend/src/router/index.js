@@ -10,6 +10,11 @@ const routes = [
     name: 'LostPage',
     path: '/lost',
     component: () => import('../views/LostPage.vue')
+  },
+  {
+    path: '/:http_code(\\d+)',
+    name: 'http_code',
+    component: () => import('../views/HttpCode.vue')
   }
 ]
 
