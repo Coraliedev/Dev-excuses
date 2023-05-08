@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import useExcusesStore from '../stores/excuses.store'
 
 const routes = [
   {
@@ -26,6 +27,14 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes
+})
+
+router.beforeEach(async (to, from, next) => {
+  if (to.name === 'DevExcuses' || to.name === 'http_code') {
+    const store = useExcusesStore()
+    await store.getExcuses()
+  }
+  next()
 })
 
 router.afterEach((to) => {
