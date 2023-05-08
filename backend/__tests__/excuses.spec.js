@@ -32,3 +32,9 @@ test('#2 POST / - With valid data return 201', async () => {
   expect(res.body.tag).toBe('test')
   expect(res.body.message).toBe('test')
 })
+
+test('#3 POST / - Without data return 500', async () => {
+  const res = await request(app).post('/api/excuse').send({})
+  expect(res).toBeDefined()
+  expect(res.statusCode).toBe(500)
+})
