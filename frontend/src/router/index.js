@@ -28,4 +28,12 @@ const router = createRouter({
   routes
 })
 
+router.afterEach((to) => {
+  if (to.name === 'LostPage') {
+    setTimeout(() => {
+      router.push({ name: 'DevExcuses' })
+    }, 5000)
+  }
+})
+
 export default router
