@@ -33,6 +33,15 @@ router.beforeEach(async (to, from, next) => {
   if (to.name === 'DevExcuses' || to.name === 'http_code') {
     const store = useExcusesStore()
     await store.getExcuses()
+    if (to.name === 'http_code') {
+      const http_code = to.params.http_code
+      const excuses = store.excuses
+      const httpCodeExist = excuses.find((excuse) => excuse.http_code == http_code)
+      if (!httpCodeExist) {
+        next({ name: 'NotFound' })
+        return
+      }
+    }
   }
   next()
 })
