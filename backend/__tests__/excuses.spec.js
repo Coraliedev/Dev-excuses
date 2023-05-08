@@ -38,3 +38,25 @@ test('#3 POST / - Without data return 500', async () => {
   expect(res).toBeDefined()
   expect(res.statusCode).toBe(500)
 })
+
+test('#4 POST / - With existing http_code return 409', async () => {
+  const res = await request(app).post('/api/excuse').send({
+    http_code: 500,
+    tag: 'test',
+    message: 'test1'
+  })
+  expect(res).toBeDefined()
+  expect(res.statusCode).toBe(409)
+  expect(res.body.message).toBe('this http_code already exists')
+})
+
+test('#5 POST / - With existing message return 409', async () => {
+  const res = await request(app).post('/api/excuse').send({
+    http_code: 501,
+    tag: 'test',
+    message: 'test'
+  })
+  expect(res).toBeDefined()
+  expect(res.statusCode).toBe(409)
+  expect(res.body.message).toBe('this message already exists')
+})
