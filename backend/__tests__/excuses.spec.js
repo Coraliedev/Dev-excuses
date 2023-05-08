@@ -70,3 +70,11 @@ test('#6 GET / - With data return 200', async () => {
   expect(res.body[0].tag).toBe('test')
   expect(res.body[0].message).toBe('test')
 })
+
+test('#7 GET / return 500', async () => {
+  // close the connection to the database
+  await mongoose.connection.close()
+  const res = await request(app).get('/api/excuse')
+  expect(res).toBeDefined()
+  expect(res.statusCode).toBe(500)
+})
