@@ -11,7 +11,7 @@ const PORT = process.env.PORT
 const app = express()
 
 // routes
-app.use('/api/excuses', excusesRoutes)
+app.use('/api/excuse', excusesRoutes)
 
 // server
 app.listen(PORT, () => {
