@@ -16,7 +16,7 @@ const newMessage = (updateMessage) => {
 <template>
   <div class="h-screen w-screen bg-gray-50 flex flex-col justify-items-center">
     <h1
-      class="text-5xl md:text-7xl text-green-500 font-dark font-extrabold mb-4 md:mb-8 text-center"
+      class="text-5xl md:text-7xl text-green-500 font-dark font-extrabold mb-4 md:mb-8 text-center mt-20"
     >
       Dev excuses
     </h1>

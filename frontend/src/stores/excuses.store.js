@@ -5,7 +5,7 @@ export default defineStore('excuses', () => {
   let excuses = ref([])
 
   const getExcuses = async () => {
-    await fetch('http://localhost:3000/api/excuse')
+    await fetch('https://dev-excuses-back.vercel.app/api/excuse')
       .then((res) => res.json())
       .then((data) => {
         excuses.value = data
@@ -18,7 +18,7 @@ export default defineStore('excuses', () => {
   }
 
   const addExcuse = async (excuse) => {
-    await fetch('http://localhost:3000/api/excuse', {
+    await fetch('https://dev-excuses-back.vercel.app/api/excuse', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
