@@ -1,10 +1,10 @@
 # dev-excuses
 
 ## Get the Code
-Clone Repo
-mkdir dev-excuses
-cd dev-excuses
-git clone https://github.com/Coraliedev/dev-excuses.git
+- Clone Repo
+- mkdir dev-excuses
+- cd dev-excuses
+- git clone https://github.com/Coraliedev/dev-excuses.git
 
 ## Run Server (API)
 - cd backend
