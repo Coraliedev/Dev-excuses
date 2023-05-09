@@ -46,12 +46,12 @@ router.beforeEach(async (to, from, next) => {
   next()
 })
 
-// router.afterEach((to) => {
-//   if (to.name === 'LostPage') {
-//     setTimeout(() => {
-//       router.push({ name: 'DevExcuses' })
-//     }, 5000)
-//   }
-// })
+router.afterEach((to) => {
+  if (to.name === 'LostPage') {
+    setTimeout(() => {
+      router.push({ name: 'DevExcuses' })
+    }, 5000)
+  }
+})
 
 export default router

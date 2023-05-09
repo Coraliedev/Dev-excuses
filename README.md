@@ -1,5 +1,8 @@
 # dev-excuses
 
+## Deployed on Vercel
+https://dev-excuses-vue.vercel.app/
+
 ## Get the Code
 - Clone Repo
 - mkdir dev-excuses
