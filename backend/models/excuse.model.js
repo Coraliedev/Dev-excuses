@@ -11,13 +11,9 @@ const excuseSchema = new mongoose.Schema({
   },
   tag: {
     type: String,
-    minlength: 3,
-    maxlength: 50
   },
   message: {
     type: String,
-    minlength: 3,
-    maxlength: 50,
     required: true,
     unique: true
   }

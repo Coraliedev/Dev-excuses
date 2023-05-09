@@ -31,7 +31,7 @@ const newMessage = (updateMessage) => {
       />
       <button
         type="button"
-        @click="modalStore.toggleModal()"
+        @click.prevent="modalStore.toggleModal()"
         :disabled="modalStore.isModalOpen"
         class="px-5 mt-5 m-auto w-1/2 max-w-xs flex justify-center items-center inline py-3 text-l md:text-xl leading-5 shadow-2xl text-white transition-all duration-400 border border-transparent rounded-lg focus:outline-none bg-green-600 active:bg-green-500 hover:bg-green-500"
       >
